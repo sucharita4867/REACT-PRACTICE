@@ -7,6 +7,7 @@ export default function User({ fetchUsers }) {
     <div className="card">
       <h3>user:{user.length}</h3>
       <h3>user:{user.name}</h3>
+      <h3>user:{user.email}</h3>
     </div>
   );
 }
