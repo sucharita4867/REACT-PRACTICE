@@ -3,7 +3,9 @@ import "./App.css";
 import Batsman from "./Batsman";
 import Counter from "./counter";
 import User from "./user";
-import Friends from "./friend";
+import Friends from "./friends";
+import Todos from "./Todos";
+import Albums from "./Albums";
 // const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users").then(
 //   (res) => res.json()
 // );
@@ -13,8 +15,18 @@ const fetchFriends = async () => {
   return res.json();
 };
 
+const fetchTodos = fetch("https://jsonplaceholder.typicode.com/todos").then(
+  (res) => res.json()
+);
+
+const fetchAlbums = async () => {
+  const albumsUrl = await fetch("https://jsonplaceholder.typicode.com/albums");
+  return albumsUrl.json();
+};
+
 function App() {
   const friendsPromise = fetchFriends();
+  const albumsPromise = fetchAlbums();
 
   function handelClick() {
     alert("btn 1 is clicked");
@@ -30,6 +42,13 @@ function App() {
   return (
     <>
       <h3>Vite + React</h3>
+      <Suspense fallback={<h3>All Albums is Loading...</h3>}>
+        <Albums albumsPromise={albumsPromise}></Albums>
+      </Suspense>
+      <Suspense fallback={<h2>Todo list is coming...</h2>}>
+        <Todos fetchTodos={fetchTodos}></Todos>
+      </Suspense>
+
       <Suspense fallback={<h3>Loading...</h3>}>
         {/* <User fetchUsers={fetchUsers}></User> */}
       </Suspense>

@@ -1,11 +1,11 @@
-import { use } from "react";
-
-export default function Friends({ friendsPromise }) {
-  const friends = use(friendsPromise);
-
+export default function Firend({ friend }) {
+  console.log(friend);
+  const { name, email, phone } = friend;
   return (
     <div className="card">
-      <h3>Friend:{friends.length} </h3>
+      <h4>Name:{name}</h4>
+      <p>Email:{email}</p>
+      <p>Phone No:{phone}</p>
     </div>
   );
 }
