@@ -6,6 +6,7 @@ import User from "./user";
 import Friends from "./friends";
 import Todos from "./Todos";
 import Albums from "./Albums";
+import Players from "./Players";
 // const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users").then(
 //   (res) => res.json()
 // );
@@ -42,6 +43,7 @@ function App() {
   return (
     <>
       <h3>Vite + React</h3>
+      <Players></Players>
       <Suspense fallback={<h3>All Albums is Loading...</h3>}>
         <Albums albumsPromise={albumsPromise}></Albums>
       </Suspense>
