@@ -4,3 +4,7 @@
       padding: 16px;
       border-radius: 10px;
 }
+
+.country-visited {
+      background-color: lightblue;
+}
