@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "brand": "Milton",
+    "color": "Blue",
+    "weight": "500ml",
+    "type": "Hot & Cold",
+    "material": "Stainless Steel",
+    "price": 450,
+    "img": "https://example.com/milton-blue-500ml.jpg"
+  },
+  {
+    "id": 2,
+    "brand": "Cello",
+    "color": "Red",
+    "weight": "750ml",
+    "type": "Cold Only",
+    "material": "Plastic",
+    "price": 220,
+    "img": "https://example.com/cello-red-750ml.jpg"
+  },
+  {
+    "id": 3,
+    "brand": "Borosil",
+    "color": "Silver",
+    "weight": "1L",
+    "type": "Hot & Cold",
+    "material": "Glass",
+    "price": 600,
+    "img": "https://example.com/borosil-silver-1l.jpg"
+  },
+  {
+    "id": 4,
+    "brand": "Tupperware",
+    "color": "Green",
+    "weight": "1.5L",
+    "type": "Cold Only",
+    "material": "Plastic",
+    "price": 350,
+    "img": "https://example.com/tupperware-green-1.5l.jpg"
+  },
+  {
+    "id": 5,
+    "brand": "Pigeon",
+    "color": "Black",
+    "weight": "2L",
+    "type": "Hot & Cold",
+    "material": "Stainless Steel",
+    "price": 800,
+    "img": "https://example.com/pigeon-black-2l.jpg"
+  }
+]
