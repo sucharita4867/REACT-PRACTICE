@@ -13,7 +13,7 @@ const Countries = ({ countriesPromise }) => {
   const countries = countriesData.countries;
   return (
     <div>
-      <h2>In the countries : {countries.length}</h2>
+      <h2>Visited countries : {countries.length}</h2>
       <h3> Total Country Visited: {visitedCountries.length}</h3>
       <ol>
         {visitedCountries.map((country) => (
