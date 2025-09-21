@@ -6,7 +6,7 @@ const Bottles = ({ bottlesPromise }) => {
   const bottles = use(bottlesPromise);
 
   const handleAddToCart = (bottle) => {
-    //     console.log("btn clicked to bottle", bottle);
+    console.log("btn clicked to bottle", bottle);
     const newCart = [...cart, bottle];
     setCart(newCart);
   };
