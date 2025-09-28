@@ -13,7 +13,7 @@ const Navbar = () => {
     <Link key={route.id} route={route}></Link>
   ));
   return (
-    <nav className="flex justify-between mx-5">
+    <nav className="flex justify-between mx-5 mt-6">
       <span onClick={() => setOpen(!open)} className="flex gap-4">
         {open ? (
           <X className="md:hidden "></X>
