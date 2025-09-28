@@ -1,9 +1,13 @@
 import "./App.css";
-
+import DaisyNav from "./assets/componante/DaisyNav/DaisyNav";
+import Navbar from "./assets/componante/Navbar/Navbar";
 function App() {
   return (
     <>
-      <h1 className="text-4xl inter-font">Vite + React</h1>
+      <header>
+        <Navbar></Navbar>
+        <DaisyNav></DaisyNav>
+      </header>
     </>
   );
 }
