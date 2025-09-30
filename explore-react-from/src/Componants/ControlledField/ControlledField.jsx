@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 
 const ControlledField = () => {
-  const [password, setpasswords] = useState("abcd");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setpasswords] = useState("");
   const [error, setError] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submited");
+    console.log(email, password, name);
+  };
+
+  const handleChangeName = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
   };
 
   const passwordValue = (e) => {
@@ -21,7 +31,19 @@ const ControlledField = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="email" name="email" id="" placeholder="email" required />
+        <input
+          type="text"
+          name="name"
+          placeholder="name"
+          onChange={handleChangeName}
+        />
+        <input
+          type="email"
+          onChange={handleEmailChange}
+          name="email"
+          placeholder="email"
+          required
+        />
         <br />
         <input
           onChange={passwordValue}
