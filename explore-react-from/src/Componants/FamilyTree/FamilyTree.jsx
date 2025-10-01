@@ -1,9 +1,11 @@
 import React from "react";
 import GrandPa from "./GrandPa";
+import "./Family-tree.css";
 
 const FamilyTree = () => {
   return (
-    <div>
+    <div className="family-tree">
+      <h1>Family Tree</h1>
       <GrandPa></GrandPa>
     </div>
   );

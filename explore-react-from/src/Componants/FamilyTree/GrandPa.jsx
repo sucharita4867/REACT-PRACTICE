@@ -5,9 +5,9 @@ import Aunt from "./Aunt";
 
 const GrandPa = () => {
   return (
-    <div>
+    <div className="">
       <h3>Grand Pa</h3>
-      <section>
+      <section className="flex">
         <Dad></Dad>
         <Unkle></Unkle>
         <Aunt></Aunt>
