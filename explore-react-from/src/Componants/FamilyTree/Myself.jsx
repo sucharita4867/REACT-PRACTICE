@@ -1,13 +1,14 @@
 import React from "react";
 import Special from "./Special";
 
-const Myself = () => {
+const myself = ({ asset }) => {
+  console.log(asset);
   return (
     <div>
-      <h3>Myself</h3>
-      <Special></Special>
+      <h3>myself</h3>
+      <Special asset={asset}></Special>
     </div>
   );
 };
 
-export default Myself;
+export default myself;
