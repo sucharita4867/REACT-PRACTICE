@@ -1,7 +1,12 @@
-import React from "react";
+import React, { use } from "react";
 import Cousin from "./Cousin";
+import { MoneyContext } from "./FamilyTree";
 
 const Aunt = ({ asset }) => {
+  const [money, setMoney] = use(MoneyContext);
+  const handleBtn = () => {
+    setMoney(money + 5000);
+  };
   return (
     <div>
       <h3>Anut</h3>
@@ -9,6 +14,7 @@ const Aunt = ({ asset }) => {
         <Cousin name="Riye"></Cousin>
         <Cousin asset={asset} name="Rupa"></Cousin>
         <Cousin name="pinki"></Cousin>
+        <button onClick={handleBtn}>Add 5000 tk</button>
       </section>
     </div>
   );

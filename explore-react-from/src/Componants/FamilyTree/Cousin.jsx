@@ -10,6 +10,7 @@ const Cousin = ({ name, asset }) => {
         // name=== " Riye" && <Special></Special>
         name === " Rupa" && <Special asset={asset}></Special>
       }
+      {name === " Riya" && <Friend></Friend>}
     </div>
   );
 };
