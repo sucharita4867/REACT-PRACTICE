@@ -14,8 +14,8 @@ const Aunt = ({ asset }) => {
         <Cousin name="Riye"></Cousin>
         <Cousin asset={asset} name="Rupa"></Cousin>
         <Cousin name="pinki"></Cousin>
-        <button onClick={handleBtn}>Add 5000 tk</button>
       </section>
+      <button onClick={handleBtn}>Add 5000 tk</button>
     </div>
   );
 };
