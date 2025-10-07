@@ -13,7 +13,7 @@ const Aunt = ({ asset }) => {
       <section className="flex">
         <Cousin name="Riye"></Cousin>
         <Cousin asset={asset} name="Rupa"></Cousin>
-        <Cousin name="pinki"></Cousin>
+        
       </section>
       <button onClick={handleBtn}>Add 5000 tk</button>
     </div>
