@@ -2,7 +2,7 @@
 //1. to get something from local storage, you will get it as a string
 // 2. convert this to javascript object/array
 
-import js = require("@eslint/js");
+// import js = require("@eslint/js");
 
 const getCartFromLocalStorage = () => {
   const storedCartString = localStorage.getItem("cart");
@@ -12,15 +12,25 @@ const getCartFromLocalStorage = () => {
   }
   return [];
 };
-const savaCartToLocalStorage = cart =>{
-      const cartStringified = JSON.stringify(cart)
-      localStorage.setItem('cart',cartStringified)
-}
-const addItemsToCartLocalStorage = (id)=>{
-      const cart = getCartFromLocalStorage()
-      const newCart = [...cart,id]
-      // save new cart to the local storage
-      savaCartToLocalStorage(newCart)
-}
+const savaCartToLocalStorage = (cart) => {
+  const cartStringified = JSON.stringify(cart);
+  localStorage.setItem("cart", cartStringified);
+};
+const addItemsToCartLocalStorage = (id) => {
+  const cart = getCartFromLocalStorage();
+  const newCart = [...cart, id];
+  // save new cart to the local storage
+  savaCartToLocalStorage(newCart);
+};
 
-export{getCartFromLocalStorage,addItemsToCartLocalStorage}
+const removeFromLocalStorage = (id) => {
+  const storedCart = getCartFromLocalStorage();
+  const remainingCart = storedCart.filter((storedId) => storedId !== id);
+  savaCartToLocalStorage(remainingCart);
+};
+
+export {
+  getCartFromLocalStorage as getStoredCart,
+  addItemsToCartLocalStorage as addToStoredCart,
+  removeFromLocalStorage as removeFromCart,
+};
