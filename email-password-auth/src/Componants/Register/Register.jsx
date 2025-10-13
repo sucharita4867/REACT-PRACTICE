@@ -1,15 +1,21 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../../Firebase/Firebase.init";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router";
 
 const Register = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
   const handelRegister = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
+    const terms = e.target.terms.checked;
     const password = e.target.password.value;
-    console.log("register btn clicked", email, password);
+    console.log("register btn clicked", email, password, terms);
 
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).{6,}$/;
     // const desidPattern = /^.{6,}$/;
@@ -40,6 +46,10 @@ const Register = () => {
     // reset stauts
     setError("");
     setSuccess(false);
+    if (!terms) {
+      setError("Please accept out terms and conditions");
+      return;
+    }
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
@@ -51,6 +61,12 @@ const Register = () => {
         setError(error.message);
       });
   };
+
+  const handlePasswordToggle = (e) => {
+    e.preventDefault();
+    setShowPassword(!showPassword);
+  };
+
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -74,12 +90,26 @@ const Register = () => {
                   placeholder="Email"
                 />
                 <label className="label">Password</label>
-                <input
-                  name="password"
-                  type="password"
-                  className="input"
-                  placeholder="Password"
-                />
+                <div className="relative">
+                  <input
+                    name="password"
+                    type={showPassword ? "text" : "password"}
+                    className="input"
+                    placeholder="Password"
+                  />
+                  <button
+                    onClick={handlePasswordToggle}
+                    className="btn btn-xs absolute top-2 right-5"
+                  >
+                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                  </button>
+                </div>
+                <div>
+                  <label className="label">
+                    <input type="checkbox" name="terms" className="checkbox" />
+                    Accept Our Terms And Condition
+                  </label>
+                </div>
                 <div>
                   <a className="link link-hover">Forgot password?</a>
                 </div>
@@ -96,6 +126,14 @@ const Register = () => {
                 </p>
               )}
             </form>
+            <div>
+              <p>
+                Allrady have ana account please{" "}
+                <Link className="text-blue-500 underline" to="/login">
+                  Login
+                </Link>{" "}
+              </p>
+            </div>
           </div>
         </div>
       </div>
