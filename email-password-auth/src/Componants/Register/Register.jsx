@@ -11,6 +11,32 @@ const Register = () => {
     const password = e.target.password.value;
     console.log("register btn clicked", email, password);
 
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).{6,}$/;
+    // const desidPattern = /^.{6,}$/;
+    // const casePattern = /^(?=.*[a-z])(?=.*[A-Z]).+$/;
+    // const spcalCharectorPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).+$/;
+    // if (!desidPattern.test(password)) {
+    //   console.log("password didnt match");
+    //   setError("password must be 6 character or longer");
+    //   return;
+    // } else if (!casePattern.test(password)) {
+    //   setError(
+    //     "password must have at least one uppercase and loarcase character"
+    //   );
+    //   return;
+    // } else if (!spcalCharectorPattern.test(password)) {
+    //   setError(
+    //     "Password must contain at least one uppercase letter, one lowercase letter, and one special character (@, $, !, %, *, ?, &)."
+    //   );
+    //   return;
+    // }
+    if (!passwordRegex.test(password)) {
+      setError(
+        "Password must be at least 6 characters long and include at least one uppercase letter, one lowercase letter, and one special character (@, $, !, %, *, ?, &)."
+      );
+      return;
+    }
+
     // reset stauts
     setError("");
     setSuccess(false);
@@ -19,10 +45,9 @@ const Register = () => {
       .then((result) => {
         console.log(result.user);
         setSuccess(true);
-        e.target.reset
+        e.target.reset();
       })
       .catch((error) => {
-        console.log(error.message);
         setError(error.message);
       });
   };
