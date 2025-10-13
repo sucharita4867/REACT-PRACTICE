@@ -129,7 +129,7 @@ const Register = () => {
             <div>
               <p>
                 Allrady have ana account please{" "}
-                <Link className="text-blue-500 underline" to="/login">
+                <Link className="text-blue-700 underline" to="/login">
                   Login
                 </Link>{" "}
               </p>
