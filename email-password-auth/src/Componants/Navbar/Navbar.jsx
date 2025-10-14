@@ -3,17 +3,23 @@ import { NavLink } from "react-router";
 
 const Navbar = () => {
   const links = (
-    <>
-      <li>
+    <div className="flex gap-4">
+      <li className="border border-gray-200">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
+      <li className="border border-gray-200">
         <NavLink to="/login">Login</NavLink>
       </li>
-      <li>
+      <li className="border border-gray-200">
         <NavLink to="/register">Register</NavLink>
       </li>
-    </>
+      <li className="border border-gray-200">
+        <NavLink to="/signin">Sign In</NavLink>
+      </li>
+      <li className="border border-gray-200">
+        <NavLink to="/login2">Login2</NavLink>
+      </li>
+    </div>
   );
   return (
     <div className="navbar bg-base-100 shadow-sm">
@@ -40,15 +46,13 @@ const Navbar = () => {
             tabIndex="-1"
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-           {links}
+            {links}
           </ul>
         </div>
         <a className="btn btn-ghost text-xl">daisyUI</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
         <a className="btn">Button</a>
