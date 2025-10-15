@@ -5,20 +5,20 @@ import { useContext } from "react";
 // import { auth } from "../../Firebase/Firebase.init";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
-
-  const handleRegister = (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    createUser(email, password)
-      .then((result) => {
-        console.log(result.user);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  const createUser = useContext(AuthContext);
+  console.log(createUser);
+  // const handleRegister = (e) => {
+  //   e.preventDefault();
+  //   const email = e.target.email.value;
+  //   const password = e.target.password.value;
+  //   createUser(email, password)
+  //     .then((result) => {
+  //       console.log(result.user);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
   // const handleRegister = (e) => {
   //   e.preventDefault();
   //   const email = e.target.email.value;
@@ -37,7 +37,7 @@ const Register = () => {
     <div className="card bg-base-100 w-full my-10 mx-auto max-w-sm shrink-0 shadow-2xl">
       <div className="card-body">
         <h1 className="text-3xl font-bold">Please Register!</h1>
-        <form onSubmit={handleRegister}>
+        <form>
           <fieldset className="fieldset">
             {/* name */}
             <label className="label">Name</label>
