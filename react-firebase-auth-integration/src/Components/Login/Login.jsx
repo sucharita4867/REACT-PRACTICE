@@ -4,8 +4,6 @@ import { AuthContext } from "../../Context/AuthContext/AuthCOntext";
 
 const Login = () => {
   const { signInUser } = use(AuthContext);
-  // console.log(signInUser);
-  // ========
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
