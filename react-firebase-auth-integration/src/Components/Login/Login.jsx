@@ -1,7 +1,13 @@
-import React from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../../Context/AuthContext/AuthCOntext";
 
 const Login = () => {
+  const signInUser = use(AuthContext)
+
+  const handleLogIn ()=>{
+    
+  }
   return (
     <div className="card bg-base-100 w-full my-10 mx-auto max-w-sm shrink-0 shadow-2xl">
       <div className="card-body">
