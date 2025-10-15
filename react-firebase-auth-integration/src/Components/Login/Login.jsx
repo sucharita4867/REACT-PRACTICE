@@ -18,20 +18,6 @@ const Login = () => {
         console.log(error);
       });
   };
-  // ========
-  // const handleLogIn = (e) => {
-  //   e.preventDefault();
-  //   const email = e.target.email.value;
-  //   const password = e.target.password.value;
-  //   console.log(email, password);
-  //   // signInUser(email, password)
-  //   //   .then((result) => {
-  //   //     console.log(result.user);
-  //   //   })
-  //   //   .catch((error) => {
-  //   //     console.log(error);
-  //   //   });
-  // };
   return (
     <div className="card bg-base-100 w-full my-10 mx-auto max-w-sm shrink-0 shadow-2xl">
       <div className="card-body">
