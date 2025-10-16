@@ -1,20 +1,33 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import "../../Components/Navbar-Css/Navbar.css";
+import { use } from "react";
+import { AuthContext } from "../../Context/AuthContext/AuthCOntext";
 const Navbar = () => {
+  const { user, signOutUser } = use(AuthContext);
+
+  const handleBtn = () => {
+    signOutUser()
+      .then(() => {
+        alert("sign out suceces full");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const links = (
-    <>
-      <div className="flex gap-4">
-        <li>
-          <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/register">Register</NavLink>
-        </li>
-        <li>
-          <NavLink to="/login">Login</NavLink>
-        </li>
-      </div>
-    </>
+    <div className="flex gap-4">
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/register">Register</NavLink>
+      </li>
+      <li>
+        <NavLink to="/login">Login</NavLink>
+      </li>
+      <li>{user && <NavLink to="/orders">Orders</NavLink>}</li>
+    </div>
   );
 
   return (
@@ -51,7 +64,13 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        {user ? (
+          <a onClick={handleBtn} className="btn">
+            sign out
+          </a>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
       </div>
     </div>
   );
