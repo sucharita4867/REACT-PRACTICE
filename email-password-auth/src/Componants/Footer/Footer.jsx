@@ -8,6 +8,9 @@ const Footer = () => {
         <NavLink className="link link-hover" to="/login">
           Login
         </NavLink>
+        <NavLink className="link link-hover" to="/login">
+          Login
+        </NavLink>
         <NavLink className="link link-hover" to="/register">
           Register
         </NavLink>
